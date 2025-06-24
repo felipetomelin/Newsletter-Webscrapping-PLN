@@ -4,14 +4,14 @@ from EconomicNewsletterAgent import EconomicNewsletterAgent
 
 
 class Agent1_ThemeSummarizer(EconomicNewsletterAgent):
-    """Agente 1: Sumariza os temas principais das notícias"""
+    #Agente 1: Sumariza os temas principais das notícias
 
     def __init__(self):
         super().__init__("AGENT_1", "Sumarizador de Temas",
                          "Identifica e sumariza os temas principais das notícias econômicas")
 
     def process_news(self, raw_news_list):
-        """Sumariza temas principais das notícias"""
+        #Sumariza temas principais das notícias
         self.log_activity("Iniciando sumarização de temas principais...")
 
         themes = {

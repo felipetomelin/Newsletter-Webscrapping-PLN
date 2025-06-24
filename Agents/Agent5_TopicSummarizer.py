@@ -4,14 +4,14 @@ from typing import Any, Dict
 from EconomicNewsletterAgent import EconomicNewsletterAgent
 
 class Agent5_TopicSummarizer(EconomicNewsletterAgent):
-    """Agente 5: Resume informações em tópicos concisos"""
+    # Agente 5: Resume informações em tópicos concisos
 
     def __init__(self):
         super().__init__("AGENT_5", "Resumidor em Tópicos",
                          "Cria resumos em tópicos únicos por tema para o newsletter")
 
     def create_topic_summaries(self, standardized_data: Dict[str, Any]) -> Dict[str, Any]:
-        """Cria resumos em tópicos únicos por tema"""
+        # Cria resumos em tópicos únicos por tema
         self.log_activity("Iniciando criação de tópicos resumidos...")
 
         # Seções para o newsletter
@@ -92,7 +92,7 @@ class Agent5_TopicSummarizer(EconomicNewsletterAgent):
         return result
 
     def _calculate_impact_level(self, relevance_score: int) -> str:
-        """Calcula nível de impacto baseado no score de relevância"""
+        # Calcula nível de impacto baseado no score de relevância
         if relevance_score >= 8:
             return 'alto'
         elif relevance_score >= 4:

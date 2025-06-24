@@ -5,7 +5,7 @@ from EconomicNewsletterAgent import EconomicNewsletterAgent
 
 
 class Agent3_NewsClassifier(EconomicNewsletterAgent):
-    """Agente 3: Classifica notícias por temas específicos"""
+    # Agente 3: Classifica notícias por temas específicos
 
     def __init__(self):
         super().__init__("AGENT_3", "Classificador de Notícias",
@@ -42,7 +42,7 @@ class Agent3_NewsClassifier(EconomicNewsletterAgent):
         }
 
     def classify_news(self, themes_and_entities: Dict[str, Any]) -> Dict[str, Any]:
-        """Classifica notícias em categorias específicas"""
+        # Classifica notícias em categorias específicas
         self.log_activity("Iniciando classificação de notícias...")
 
         classified_news = {}

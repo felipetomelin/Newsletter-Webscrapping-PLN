@@ -6,7 +6,7 @@ from typing import Dict, Any
 from EconomicNewsletterAgent import EconomicNewsletterAgent
 
 class Agent2_EntityExtractor(EconomicNewsletterAgent):
-    """Agente 2: Extrai entidades nomeadas das notícias"""
+    #Agente 2: Extrai entidades nomeadas das notícias
 
     def __init__(self):
         super().__init__("AGENT_2", "Extrator de Entidades",
@@ -31,7 +31,7 @@ class Agent2_EntityExtractor(EconomicNewsletterAgent):
         ]
 
     def extract_entities(self, summarized_themes: Dict[str, Any]) -> Dict[str, Any]:
-        """Extrai entidades relevantes das notícias"""
+        #Extrai entidades relevantes das notícias
         self.log_activity("Iniciando extração de entidades...")
 
         entities = {

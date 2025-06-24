@@ -5,14 +5,14 @@ import numpy as np
 from EconomicNewsletterAgent import EconomicNewsletterAgent
 
 class Agent7_TemporalPredictor(EconomicNewsletterAgent):
-    """Agente 7: Faz predições econômicas para as próximas semanas"""
+    # Agente 7: Faz predições econômicas para as próximas semanas
 
     def __init__(self):
         super().__init__("AGENT_7", "Preditor Temporal",
                          "Analisa tendências e faz predições econômicas para próximas semanas")
 
     def generate_predictions(self, validated_content: Dict[str, Any]) -> Dict[str, Any]:
-        """Gera predições baseadas no conteúdo validado"""
+        # Gera predições baseadas no conteúdo validado
         self.log_activity("Iniciando análise preditiva temporal...")
 
         predictions = {

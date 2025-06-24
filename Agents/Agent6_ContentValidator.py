@@ -3,14 +3,14 @@
 from EconomicNewsletterAgent import EconomicNewsletterAgent
 
 class Agent6_ContentValidator(EconomicNewsletterAgent):
-    """Agente 6: Valida se os resumos são adequados para leitores"""
+    # Agente 6: Valida se os resumos são adequados para leitores
 
     def __init__(self):
         super().__init__("AGENT_6", "Validador de Conteúdo",
                          "Valida qualidade e adequação do conteúdo para leitores")
 
     def validate_content(self, topic_summaries: Dict[str, Any]) -> Dict[str, Any]:
-        """Valida se o conteúdo está adequado para publicação"""
+        # Valida se o conteúdo está adequado para publicação
         self.log_activity("Iniciando validação de conteúdo...")
 
         validation_results = {
@@ -76,7 +76,7 @@ class Agent6_ContentValidator(EconomicNewsletterAgent):
         return validation_results
 
     def _validate_topic(self, topic: Dict[str, Any]) -> Dict[str, Any]:
-        """Valida um tópico individual"""
+        # Valida um tópico individual
         validation = {
             'approved': True,
             'quality_score': 0,
@@ -110,7 +110,7 @@ class Agent6_ContentValidator(EconomicNewsletterAgent):
         return validation
 
     def _generate_recommendations(self, validation_results: Dict[str, Any]) -> List[str]:
-        """Gera recomendações baseadas na validação"""
+        # Gera recomendações baseadas na validação
         recommendations = []
 
         # Analisar cada seção para recomendações

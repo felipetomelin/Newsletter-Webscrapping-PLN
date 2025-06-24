@@ -30,7 +30,7 @@ class CNNBrasilScraper:
         self._create_database()
 
     def _create_database(self):
-        """Cria a tabela de notícias se não existir"""
+        # Cria a tabela de notícias se não existir
         self.cursor.execute('''
             CREATE TABLE IF NOT EXISTS noticias (
                 id INTEGER PRIMARY KEY AUTOINCREMENT,
@@ -47,7 +47,7 @@ class CNNBrasilScraper:
         self.conn.commit()
 
     def classificar_categoria(self, texto):
-        """Classifica a notícia em uma categoria com base em palavras-chave"""
+        # Classifica a notícia em uma categoria com base em palavras-chave
         texto = texto.lower()
         for categoria, palavras in self.CATEGORIAS.items():
             if any(palavra in texto for palavra in palavras):
@@ -55,12 +55,12 @@ class CNNBrasilScraper:
         return "outras"
 
     def analisar_sentimento(self, texto):
-        """Analisa o sentimento do texto usando TextBlob"""
+        # Analisa o sentimento do texto usando TextBlob
         blob = TextBlob(texto)
         return blob.sentiment.polarity
 
     def extrair_conteudo_noticia(self, url):
-        """Extrai o conteúdo completo de uma notícia"""
+        # Extrai o conteúdo completo de uma notícia
         try:
             response = requests.get(url, headers=self.headers, timeout=15)
             soup = BeautifulSoup(response.text, 'html.parser')
@@ -94,7 +94,7 @@ class CNNBrasilScraper:
             return {'title': '', 'content': '', 'date': ''}
 
     def scrape_economia_news(self):
-        """Coleta notícias de economia da CNN Brasil"""
+        # Coleta notícias de economia da CNN Brasil
         base_url = "https://www.cnnbrasil.com.br/economia/"
         try:
             response = requests.get(base_url, headers=self.headers, timeout=15)
@@ -191,11 +191,11 @@ class CNNBrasilScraper:
             return []
 
     def close(self):
-        """Fecha a conexão com o banco de dados"""
+        # Fecha a conexão com o banco de dados
         self.conn.close()
 
     def sumarizar_noticias_simples(self, noticias):
-        """Sumariza notícias usando uma abordagem simplificada"""
+        # Sumariza notícias usando uma abordagem simplificada
         if not noticias:
             return "Nenhuma notícia relevante foi coletada."
 

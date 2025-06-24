@@ -4,14 +4,14 @@ from typing import Dict, Any
 from EconomicNewsletterAgent import EconomicNewsletterAgent
 
 class Agent4_ResponseStandardizer(EconomicNewsletterAgent):
-    """Agente 4: Padroniza as respostas e formato de saída"""
+    # Agente 4: Padroniza as respostas e formato de saída
 
     def __init__(self):
         super().__init__("AGENT_4", "Padronizador de Respostas",
                          "Padroniza formato e estrutura das respostas dos agentes anteriores")
 
     def standardize_output(self, classified_data: Dict[str, Any]) -> Dict[str, Any]:
-        """Padroniza a saída em formato consistente"""
+        # Padroniza a saída em formato consistente
         self.log_activity("Iniciando padronização de respostas...")
 
         standardized = {

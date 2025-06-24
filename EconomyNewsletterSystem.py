@@ -14,7 +14,6 @@ from EconomicNewsletterAgent import EconomicNewsletterAgent
 from logger_config import logger
 
 class EconomicNewsletterSystem:
-    """Sistema completo que coordena todos os 7 agentes"""
 
     def __init__(self):
         self.agents = self._initialize_agents()
@@ -23,7 +22,7 @@ class EconomicNewsletterSystem:
         self.is_running = False
 
     def _initialize_agents(self) -> Dict[str, EconomicNewsletterAgent]:
-        """Inicializa todos os 7 agentes"""
+        # Inicializa todos os 7 agentes
         return {
             'theme_summarizer': Agent1_ThemeSummarizer(),
             'entity_extractor': Agent2_EntityExtractor(),
@@ -35,7 +34,7 @@ class EconomicNewsletterSystem:
         }
 
     def run_pipeline(self, news_data=None) -> Dict[str, Any]:
-        """Executa o pipeline completo de processamento"""
+        # Executa o pipeline completo de processamento
         logger.info("Iniciando pipeline de newsletter econômico")
 
         try:
@@ -111,7 +110,7 @@ class EconomicNewsletterSystem:
             return {'error': str(e), 'status': 'failed'}
 
     def generate_newsletter(self, predictions_data: Dict[str, Any], validated_content: Dict[str, Any]) -> str:
-        """Gera HTML do newsletter final"""
+        # Gera HTML do newsletter final
         logger.info("Gerando HTML do newsletter final")
 
         predictions = predictions_data.get('predictions', {})
@@ -180,7 +179,7 @@ class EconomicNewsletterSystem:
         return newsletter_html
 
     def save_newsletter(self, newsletter_html: str) -> None:
-        """Salva o newsletter em arquivo HTML"""
+        # Salva o newsletter em arquivo HTML
         try:
             # Criar diretório outputs se não existir
             os.makedirs('outputs', exist_ok=True)

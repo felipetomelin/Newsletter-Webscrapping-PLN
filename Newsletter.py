@@ -5,7 +5,7 @@ from Pipeline import step7_predictions, step6_validated, sample_news_data, step1
 
 
 def generate_final_newsletter(predictions_data, validated_content):
-    """Gera o newsletter final formatado para envio"""
+    # Gera o newsletter final formatado para envio
 
     newsletter_html = f"""
 <!DOCTYPE html>
@@ -112,22 +112,22 @@ final_newsletter = generate_final_newsletter(step7_predictions, step6_validated)
 with open('newsletter_economia_exemplo.html', 'w', encoding='utf-8') as f:
     f.write(final_newsletter)
 
-print("📧 NEWSLETTER FINAL GERADO!")
+print(" NEWSLETTER FINAL GERADO!")
 print("=" * 50)
-print("✅ Arquivo salvo como: newsletter_economia_exemplo.html")
-print("📊 Conteúdo processado por 7 agentes especializados")
-print("🤖 Sistema totalmente automatizado")
-print("⏰ Pronto para envio diário")
+print(" Arquivo salvo como: newsletter_economia_exemplo.html")
+print(" Conteúdo processado por 7 agentes especializados")
+print(" Sistema totalmente automatizado")
+print(" Pronto para envio diário")
 
 # Estatísticas finais do sistema
-print("\n📈 ESTATÍSTICAS FINAIS DO SISTEMA:")
+print("\n ESTATÍSTICAS FINAIS DO SISTEMA:")
 print("=" * 50)
-print(f"🔍 Notícias analisadas: {len(sample_news_data)}")
-print(f"🏷️ Temas identificados: {len(step1_themes['themes_distribution'])}")
-print(f"📊 Categorias classificadas: {len(step3_classified['classified_categories'])}")
-print(f"📝 Tópicos validados: {total_approved}")
-print(f"🔮 Predições geradas: {len(predictions['economic_indicators']) + len(predictions['sector_predictions'])}")
-print(f"⚠️ Riscos identificados: {len(predictions['risk_factors'])}")
-print(f"🎯 Confiança média: {predictions['confidence_levels']['overall_confidence']:.1%}")
+print(f" Notícias analisadas: {len(sample_news_data)}")
+print(f" Temas identificados: {len(step1_themes['themes_distribution'])}")
+print(f" Categorias classificadas: {len(step3_classified['classified_categories'])}")
+print(f" Tópicos validados: {total_approved}")
+print(f" Predições geradas: {len(predictions['economic_indicators']) + len(predictions['sector_predictions'])}")
+print(f"️ Riscos identificados: {len(predictions['risk_factors'])}")
+print(f" Confiança média: {predictions['confidence_levels']['overall_confidence']:.1%}")
 
-print("\n🚀 SISTEMA PRONTO PARA PRODUÇÃO!")
+print("\n SISTEMA PRONTO PARA PRODUÇÃO!")
